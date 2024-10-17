@@ -29,7 +29,7 @@ h2 {
 
 /* Estilo de las etiquetas */
 label {
-    font-size: 18px;
+    font-size: 22px; /* Ajusta la mida aquí */
     color: #555;
     margin: 10px 0;
 }
