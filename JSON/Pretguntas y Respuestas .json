@@ -1,0 +1,50 @@
+{
+    "preguntas_respuestas": [
+      {
+        "pregunta": "¿Cuál es la capital de Francia?",
+        "respuestas": [
+          { "respuesta": "París", "correcta": true },
+          { "respuesta": "Madrid", "correcta": false },
+          { "respuesta": "Roma", "correcta": false },
+          { "respuesta": "Berlín", "correcta": false }
+        ]
+      },
+      {
+        "pregunta": "¿Cuáles de los siguientes escritores son latinoamericanos?",
+        "respuestas": [
+          { "respuesta": "Gabriel García Márquez", "correcta": true },
+          { "respuesta": "Mario Vargas Llosa", "correcta": true },
+          { "respuesta": "William Shakespeare", "correcta": false },
+          { "respuesta": "Julio Cortázar", "correcta": true }
+        ]
+      },
+      {
+        "pregunta": "¿En qué año llegó el hombre a la luna?",
+        "respuestas": [
+          { "respuesta": "1969", "correcta": true },
+          { "respuesta": "1975", "correcta": false },
+          { "respuesta": "1965", "correcta": false },
+          { "respuesta": "1980", "correcta": false }
+        ]
+      },
+      {
+        "pregunta": "¿Cuáles de los siguientes océanos existen en el mundo?",
+        "respuestas": [
+          { "respuesta": "Océano Pacífico", "correcta": true },
+          { "respuesta": "Océano Atlántico", "correcta": true },
+          { "respuesta": "Océano Índico", "correcta": true },
+          { "respuesta": "Océano Americano", "correcta": false }
+        ]
+      },
+      {
+        "pregunta": "¿Qué gases son esenciales para la vida humana?",
+        "respuestas": [
+          { "respuesta": "Oxígeno", "correcta": true },
+          { "respuesta": "Nitrógeno", "correcta": true },
+          { "respuesta": "Dióxido de carbono", "correcta": false },
+          { "respuesta": "Helio", "correcta": false }
+        ]
+      }
+    ]
+  }
+  
