@@ -21,16 +21,29 @@
             font-weight: bold;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
         }
-        a {
+
+        .btn {
+            background-color: #4CAF50; 
             color: white;
+            padding: 12px 25px;
             font-size: 1.5rem;
-            text-decoration: underline;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             margin-top: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        /* Efecto hover en el botón */
+        .btn:hover {
+            background-color: #45a049; 
         }
     </style>
 </head>
 <body>
     <h1>¡Correcte!</h1>
-    <a href="../PHP/quiz.php">Siguiente Pregunta</a>
+    <a href="../PHP/quiz.php" class="btn">Siguiente Pregunta</a>
 </body>
 </html>
