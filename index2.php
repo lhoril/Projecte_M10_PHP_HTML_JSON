@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+// Limpiar la sesión
+session_unset();
+session_destroy();
+session_start();
+
+$_SESSION['status'] = PHP_SESSION_ACTIVE;
+
 // Procesar el formulario si se ha enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Guardar el nombre en la sesión
@@ -27,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Redirigir a quiz.php para iniciar el cuestionario
-    header("Location: seleccionar_archivo.php");
+    header("Location: ./PHP/seleccionar_archivo.php");
     exit;
 }
 ?>
@@ -41,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../Estils/CSS.css">   
 </head>
 <body>
-    <form action="index.php" method="POST" enctype="multipart/form-data">
+    <form action="index2.php" method="POST" enctype="multipart/form-data">
         <h2>Bienvenido al QUIZ</h2>
         
         <label for="name">Introduce tu nombre:</label>
