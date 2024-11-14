@@ -6,6 +6,7 @@
     {
       "pregunta": "¿Cuál es la capital de Francia?",
       "Tipus": "radio",
+      "Temps": "20",
       "respuestas": [
         { "respuesta": "París", "correcta": true },
         { "respuesta": "Madrid", "correcta": false },
@@ -16,6 +17,7 @@
     {
       "pregunta": "¿Cuáles de los siguientes escritores son latinoamericanos?",
       "Tipus": "checkbox",
+      "Temps": "25",
       "respuestas": [
         { "respuesta": "Gabriel García Márquez", "correcta": true },
         { "respuesta": "Mario Vargas Llosa", "correcta": true },
@@ -26,6 +28,7 @@
     {
       "pregunta": "¿En qué año llegó el hombre a la luna?",
       "Tipus": "radio",
+      "Temps": "20",
       "respuestas": [
         { "respuesta": "1969", "correcta": true },
         { "respuesta": "1975", "correcta": false },
@@ -36,6 +39,7 @@
     {
       "pregunta": "¿Cuáles de los siguientes océanos existen en el mundo?",
       "Tipus": "checkbox",
+      "Temps": "20",
       "respuestas": [
         { "respuesta": "Océano Pacífico", "correcta": true },
         { "respuesta": "Océano Atlántico", "correcta": false },
@@ -46,6 +50,7 @@
     {
       "pregunta": "¿Qué gases son esenciales para la vida humana?",
       "Tipus": "checkbox",
+      "Temps": "25",
       "respuestas": [
         { "respuesta": "Oxígeno", "correcta": true },
         { "respuesta": "Nitrógeno", "correcta": true },
