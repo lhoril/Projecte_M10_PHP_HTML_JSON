@@ -48,6 +48,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../Estils/CSS.css">   
 </head>
 <body>
+
+    <audio id="miAudio" src="../audio/KahootMusic.mp3" preload="auto"></audio>
+
+    <script>
+        // Espera a que el contenido de la página esté completamente cargado
+        window.addEventListener('load', function() {
+            // Selecciona el elemento de audio
+            const audio = document.getElementById('miAudio');
+            
+            // Intenta reproducir el audio
+            audio.play().catch(error => {
+                console.log("La reproducción automática fue bloqueada por el navegador:", error);
+            });
+        });
+    </script>
+
     <form action="index2.php" method="POST" enctype="multipart/form-data">
         <h2>Bienvenido al QUIZ</h2>
         

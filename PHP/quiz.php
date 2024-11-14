@@ -27,6 +27,7 @@ $preguntas = $data['preguntas_respuestas'];
 $totalPreguntas = (int) $data['Quantitat_Preguntes'][0]['Quantitat'];
 $preguntaActual = isset($_SESSION['pregunta_actual']) ? $_SESSION['pregunta_actual'] : -1;
 $respuestasCorrectas = isset($_SESSION['respuestas_correctas']) ? $_SESSION['respuestas_correctas'] : 0;
+$temps = (int) $preguntas[$preguntaActual+1]['Temps'];
 
 $respuestaSeleccionada = isset($_POST['respuesta']) ? $_POST['respuesta'] : null;
 // Manejo de respuesta del formulario
@@ -87,21 +88,49 @@ if ($preguntaActual >= $totalPreguntas) {
     <link rel="stylesheet" href="../Estils/CSS.css">
 </head>
 <body>
-    <form method="POST" action="quiz.php">
-        <h2>Pregunta <?php echo $preguntaActual + 1; ?> de <?php echo $totalPreguntas; ?></h2>
-        <label for="pregunta"><?php echo $preguntas[$preguntaActual]['pregunta']; ?></label><br><br>
+    <div class="container">
+        <div class="centerpreguntesBox">
+            <form method="POST" action="quiz.php" id="quizForm">
+                <h2>Pregunta <?php echo $preguntaActual + 1; ?> de <?php echo $totalPreguntas; ?></h2>
+                <label for="pregunta"><?php echo $preguntas[$preguntaActual]['pregunta']; ?></label><br><br>
 
-        <?php foreach ($preguntas[$preguntaActual]['respuestas'] as $index => $respuesta): ?>
-            <?php if ($preguntas[$preguntaActual]['Tipus'] === 'radio'): ?>
-                <input type="radio" id="respuesta<?php echo $index; ?>" name="respuesta" value="<?php echo htmlspecialchars($respuesta['respuesta']); ?>">
-                <label for="respuesta<?php echo $index; ?>"><?php echo htmlspecialchars($respuesta['respuesta']); ?></label><br>
-            <?php elseif ($preguntas[$preguntaActual]['Tipus'] === 'checkbox'): ?>
-                <input type="checkbox" id="respuesta<?php echo $index; ?>" name="respuesta[]" value="<?php echo htmlspecialchars($respuesta['respuesta']); ?>">
-                <label for="respuesta<?php echo $index; ?>"><?php echo htmlspecialchars($respuesta['respuesta']); ?></label><br>
-            <?php endif; ?>
-        <?php endforeach; ?><br>
+                <?php foreach ($preguntas[$preguntaActual]['respuestas'] as $index => $respuesta): ?>
+                    <?php if ($preguntas[$preguntaActual]['Tipus'] === 'radio'): ?>
+                        <input type="radio" id="respuesta<?php echo $index; ?>" name="respuesta" value="<?php echo htmlspecialchars($respuesta['respuesta']); ?>">
+                        <label for="respuesta<?php echo $index; ?>"><?php echo htmlspecialchars($respuesta['respuesta']); ?></label><br>
+                    <?php elseif ($preguntas[$preguntaActual]['Tipus'] === 'checkbox'): ?>
+                        <input type="checkbox" id="respuesta<?php echo $index; ?>" name="respuesta[]" value="<?php echo htmlspecialchars($respuesta['respuesta']); ?>">
+                        <label for="respuesta<?php echo $index; ?>"><?php echo htmlspecialchars($respuesta['respuesta']); ?></label><br>
+                    <?php endif; ?>
+                <?php endforeach; ?><br>
 
-        <input type="submit" value="Enviar respuesta">
-    </form>
+                <input type="submit" value="Enviar respuesta">
+            </form>
+        </div>
+        <div class="extremoDerecho">
+            <div class="circle">
+                <div class="time" id="Temps"><?php echo $temps; ?></div> <!-- Tiempo inicial de ejemplo -->
+            </div>
+        </div>
+    </div>
+    <script>
+        // Inicializamos el tiempo en 0 segundos
+        let tiempo = 0;
+        let tiempoTotal = <?php echo $temps; ?>;
+        let tiempoRestante = <?php echo $temps; ?>;
+
+        // Función para incrementar el tiempo y mostrarlo en consola
+        function temporizador() {
+        if(tiempoRestante > 0){
+            tiempo++;
+            tiempoRestante = tiempoTotal - tiempo;
+            document.getElementById("Temps").innerHTML = tiempoRestante;
+        }
+        else document.getElementById("quizForm").submit();
+        }
+
+        // Usamos setInterval para que la función se ejecute cada segundo (1000 ms)
+        setInterval(temporizador, 1000);
+    </script>
 </body>
 </html>
