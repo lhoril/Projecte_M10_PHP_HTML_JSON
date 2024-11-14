@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba</title>
+    <title>Página con música</title>
 </head>
 <body>
-    
+    <h1>Bienvenido a mi página con música</h1>
+    <!-- Elemento de audio oculto -->
+    <audio id="miAudio" src="../audio/KahootMusic.mp3" preload="auto"></audio>
+
+    <script>
+        // Espera a que el contenido de la página esté completamente cargado
+        window.addEventListener('load', function() {
+            // Selecciona el elemento de audio
+            const audio = document.getElementById('miAudio');
+            
+            // Intenta reproducir el audio
+            audio.play().catch(error => {
+                console.log("La reproducción automática fue bloqueada por el navegador:", error);
+            });
+        });
+    </script>
 </body>
 </html>
